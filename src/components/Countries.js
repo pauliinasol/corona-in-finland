@@ -20,8 +20,9 @@ const LineStyled = styled.div`
   flex-direction: row;
   align-items: baseline;
   padding: 5px;
-  > * {
-    /* margin: 5px; */
+  * {
+    display: flex;
+    align-items: center;
   }
 `;
 

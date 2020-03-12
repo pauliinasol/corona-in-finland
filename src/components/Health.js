@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { HeadingOne } from "../utils/typography";
+import { HeadingOne, HeadingTwo } from "../utils/typography";
 import { filterCountries } from "../utils/lib";
 import { uniq } from "ramda";
 import { CountryCard } from "./Countries";
@@ -63,6 +63,7 @@ export const HealthData = () => {
         recoveries from corona virus
       </DataCard>
       <CountryCard countries={countries} countryOptions={countryOptions} />
+      <HeadingTwo>Keep calm, wash your hands and flatten the curve!</HeadingTwo>
     </MainCard>
   );
 };
