@@ -48,18 +48,18 @@ export const HealthData = () => {
 
   return (
     <MainCard>
-      <HeadingOne>Status of Corona in Finland</HeadingOne>
+      <HeadingOne>State of corona in Finland</HeadingOne>
       <DataCard>
-        There has been
+        There have been
         <DataNumber> {data.confirmed.length} </DataNumber>
         corona cases in Finland
       </DataCard>
       <DataCard>
-        There has been <DataNumber>{data.deaths.length}</DataNumber> deaths in
+        There have been <DataNumber>{data.deaths.length}</DataNumber> deaths in
         Finland from corona virus
       </DataCard>
       <DataCard>
-        There has been <DataNumber>{data.recovered.length}</DataNumber>{" "}
+        There have been <DataNumber>{data.recovered.length}</DataNumber>
         recoveries from corona virus
       </DataCard>
       <CountryCard countries={countries} countryOptions={countryOptions} />
