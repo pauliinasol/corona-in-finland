@@ -8,7 +8,7 @@ const CountryStyled = styled.div`
 `;
 
 const CountryCode = styled.div`
-  width: 70px;
+  width: 120px;
 `;
 
 const CountriesLengthStyled = styled.div`
@@ -18,7 +18,7 @@ const CountriesLengthStyled = styled.div`
 const LineStyled = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
   padding: 5px;
   > * {
     /* margin: 5px; */
@@ -43,6 +43,8 @@ const Line = styled.div`
 export const CountryCard = ({ countries, countryOptions }) => {
   const countriesLength = c =>
     countries.filter(country => country === c).length;
+
+  const getCountryCode = c => (c === null ? "unknown" : c);
   return (
     <>
       <ul>
@@ -52,7 +54,7 @@ export const CountryCard = ({ countries, countryOptions }) => {
           {countryOptions.map(c => (
             <li>
               <LineStyled>
-                <CountryCode>{c}</CountryCode>
+                <CountryCode>{getCountryCode(c)}</CountryCode>
                 <Line fromY={countriesLength(c)} />
                 <CountriesLengthStyled>
                   {countriesLength(c)}

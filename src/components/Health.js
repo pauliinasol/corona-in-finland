@@ -12,6 +12,7 @@ const DataCard = styled.div`
 
 const DataNumber = styled.span`
   color: #5bc8ac;
+  font-weight: bold;
 `;
 
 const MainCard = styled.div`
