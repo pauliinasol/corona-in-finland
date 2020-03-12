@@ -59,7 +59,7 @@ export const HealthData = () => {
         Finland from corona virus
       </DataCard>
       <DataCard>
-        There have been <DataNumber>{data.recovered.length}</DataNumber>
+        There have been <DataNumber>{data.recovered.length}</DataNumber>{" "}
         recoveries from corona virus
       </DataCard>
       <CountryCard countries={countries} countryOptions={countryOptions} />
