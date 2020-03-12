@@ -55,7 +55,7 @@ export const HealthData = () => {
         corona cases in Finland
       </DataCard>
       <DataCard>
-        There have been <DataNumber>{data.deaths.length}</DataNumber> deaths in
+        There have been <DataNumber>{data.deaths.length}</DataNumber> death in
         Finland from corona virus
       </DataCard>
       <DataCard>
