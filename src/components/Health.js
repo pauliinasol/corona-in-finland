@@ -48,7 +48,7 @@ export const HealthData = () => {
 
   return (
     <MainCard>
-      <HeadingOne>State of corona in Finland</HeadingOne>
+      <HeadingOne>State of corona virus in Finland</HeadingOne>
       <DataCard>
         There have been
         <DataNumber> {data.confirmed.length} </DataNumber>
