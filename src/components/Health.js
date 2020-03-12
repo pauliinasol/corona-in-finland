@@ -14,6 +14,10 @@ const DataNumber = styled.span`
   color: #5bc8ac;
 `;
 
+const MainCard = styled.div`
+  /* text-align: left; */
+`;
+
 export const HealthData = () => {
   const [data, setData] = useState();
   const [error, setErrors] = useState([]);
@@ -42,7 +46,7 @@ export const HealthData = () => {
   console.log(countryOptions);
 
   return (
-    <>
+    <MainCard>
       <HeadingOne>Status of Corona in Finland</HeadingOne>
       <DataCard>
         There has been
@@ -58,6 +62,6 @@ export const HealthData = () => {
         recoveries from corona virus
       </DataCard>
       <CountryCard countries={countries} countryOptions={countryOptions} />
-    </>
+    </MainCard>
   );
 };

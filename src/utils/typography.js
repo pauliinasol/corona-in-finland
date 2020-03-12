@@ -7,3 +7,10 @@ export const HeadingOne = styled.div`
   padding: 15px;
   color: #eb8a44;
 `;
+
+export const HeadingTwo = styled.div`
+  font-family: "Roboto Mono", monospace;
+  font-size: 22px;
+  padding: 15px;
+  color: #5bc8ac;
+`;
