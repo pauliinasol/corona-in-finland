@@ -16,7 +16,7 @@ export const HeadingTwo = styled.div`
 
 export const SmallText = styled.div`
   font-family: "Roboto Mono", monospace;
-  font-size: 16px;
+  font-size: 15px;
 `;
 
 export const SmallTextColor = styled.div`

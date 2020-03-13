@@ -9,6 +9,7 @@ const CountryStyled = styled.div`
 
 const CountryCode = styled.div`
   width: 250px;
+  font-size: 20px;
   @media (max-width: 768px) {
     width: 80px;
   }
