@@ -9,15 +9,19 @@ import { LastInfection } from "./LastInfection";
 const DataCard = styled.div`
   padding: 10px;
   font-family: "Inconsolata", monospace;
-  display: flex;
-  justify-content: center;
+  ${({ center }) =>
+    center &&
+    `
+    display: flex;
+    justify-content: center;
+  `}
 `;
 
 const DataNumber = styled.span`
   color: #5bc8ac;
   font-weight: bold;
-  margin-left: 8px;
-  margin-right: 8px;
+  /* margin-left: 8px;
+  margin-right: 8px; */
 `;
 
 const MainCard = styled.div`
@@ -53,8 +57,7 @@ export const HealthData = () => {
     <MainCard>
       <HeadingOne>State of corona virus in Finland</HeadingOne>
       <DataCard>
-        There have been
-        <DataNumber> {data.confirmed.length} </DataNumber>
+        There have been <DataNumber> {data.confirmed.length} </DataNumber>{" "}
         corona cases in Finland
       </DataCard>
       <DataCard>
@@ -62,10 +65,10 @@ export const HealthData = () => {
         Finland from corona virus
       </DataCard>
       <DataCard>
-        There have been <DataNumber>{data.recovered.length}</DataNumber>
+        There have been <DataNumber>{data.recovered.length}</DataNumber>{" "}
         recoveries from corona virus
       </DataCard>
-      <DataCard>
+      <DataCard center>
         <LastInfection lastItem={lastItem} />
       </DataCard>
       <CountryCard countries={countries} countryOptions={countryOptions} />

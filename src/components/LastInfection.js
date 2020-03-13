@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { SmallText, SmallTextColor } from "../utils/typography";
 import { format } from "date-fns";
 
 const LastInfectionStyled = styled.div`
-  min-height: 50px;
-  min-width: 70px;
+  min-height: 40px;
+  width: 300px;
   border: 1px solid #5bc8ac;
   border-radius: 20px;
   padding: 20px;
