@@ -54,7 +54,7 @@ export const CountryCard = ({ countries, countryOptions }) => {
         <CountryStyled>
           {countryOptions.map(c => (
             <li>
-              <LineStyled>
+              <LineStyled key={countryOptions.id}>
                 <CountryCode>{getCountryCode(c)}</CountryCode>
                 <Line fromY={countriesLength(c)} />
                 <CountriesLengthStyled>
