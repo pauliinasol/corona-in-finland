@@ -8,7 +8,7 @@ const CountryStyled = styled.div`
 `;
 
 const CountryCode = styled.div`
-  width: 120px;
+  width: 250px;
 `;
 
 const CountriesLengthStyled = styled.div`

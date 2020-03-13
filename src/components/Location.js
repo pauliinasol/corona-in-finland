@@ -8,7 +8,7 @@ const CountryStyled = styled.div`
 `;
 
 const LocationName = styled.div`
-  width: 200px;
+  width: 250px;
 `;
 
 const LocationsLengthStyled = styled.div`
@@ -49,7 +49,7 @@ export const Location = ({ locations, infectionLocation }) => {
   return (
     <>
       <ul>
-        <HeadingTwo>Infection location:</HeadingTwo>
+        <HeadingTwo>Infection location in Finland:</HeadingTwo>
         <CountryStyled>
           {infectionLocation.map(l => (
             <li key={infectionLocation.id + l}>
