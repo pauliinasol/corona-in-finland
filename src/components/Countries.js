@@ -9,6 +9,9 @@ const CountryStyled = styled.div`
 
 const CountryCode = styled.div`
   width: 250px;
+  @media (max-width: 768px) {
+    width: 80px;
+  }
 `;
 
 const CountriesLengthStyled = styled.div`
@@ -39,6 +42,14 @@ const Line = styled.div`
       100% { width: ${fromY * 3}px}
     `};
   `}
+  @media (max-width: 768px) {
+    ${({ fromY }) => css`
+      animation-name: ${keyframes`
+      0% { width: 0px }
+      100% { width: ${fromY}px}
+    `};
+    `}
+  }
 `;
 
 export const CountryCard = ({ countries, countryOptions }) => {

@@ -9,6 +9,10 @@ const CountryStyled = styled.div`
 
 const LocationName = styled.div`
   width: 250px;
+  @media (max-width: 768px) {
+    width: 80px;
+    font-size: 14px;
+  }
 `;
 
 const LocationsLengthStyled = styled.div`
@@ -39,6 +43,14 @@ const Line = styled.div`
       100% { width: ${fromY * 3}px}
     `};
   `}
+  @media (max-width: 768px) {
+    ${({ fromY }) => css`
+      animation-name: ${keyframes`
+      0% { width: 0px }
+      100% { width: ${fromY}px}
+    `};
+    `}
+  }
 `;
 
 export const Location = ({ locations, infectionLocation }) => {
