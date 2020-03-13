@@ -17,6 +17,10 @@ const DataCard = styled.div`
   `}
 `;
 
+const ContentWrapper = styled.div`
+  padding: 30px;
+`;
+
 const DataNumber = styled.span`
   color: #5bc8ac;
   font-weight: bold;
@@ -90,9 +94,13 @@ export const HealthData = () => {
 
       <Location districtsGrouped={districtsGrouped} />
       <CountryCard countriesGrouped={countriesGrouped} />
-      <HeadingTwo>Keep calm, wash your hands and flatten the curve!</HeadingTwo>
-      <SmallText>Data source: copyright (c) 2020 Helsingin Sanomat</SmallText>
-      <SmallText>Find me from github: @pauliinasol</SmallText>
+      <ContentWrapper>
+        <HeadingTwo>
+          Keep calm, wash your hands and flatten the curve!
+        </HeadingTwo>
+        <SmallText>Data source: copyright (c) 2020 Helsingin Sanomat</SmallText>
+        <SmallText>Find me from github: @pauliinasol</SmallText>
+      </ContentWrapper>
     </MainCard>
   );
 };
