@@ -73,7 +73,8 @@ export const HealthData = () => {
       </DataCard>
       <CountryCard countries={countries} countryOptions={countryOptions} />
       <HeadingTwo>Keep calm, wash your hands and flatten the curve!</HeadingTwo>
-      <SmallText>Copyright (c) 2020 Helsingin Sanomat</SmallText>
+      <SmallText>Data source: copyright (c) 2020 Helsingin Sanomat</SmallText>
+      <SmallText>Find me from github: @pauliinasol</SmallText>
     </MainCard>
   );
 };
