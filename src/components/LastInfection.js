@@ -40,14 +40,17 @@ const ItemAnim = styled.span`
 `;
 
 export const LastInfection = ({ lastItem }) => {
-  console.log(lastItem);
   return (
     <LastInfectionStyled>
       <SmallText>Last Infection:</SmallText>
       <SmallTextColor>
         <InfectionItemStyled>
-          <ItemAnim>{lastItem.healthCareDistrict}: </ItemAnim>
-          <ItemAnim>{format(new Date(lastItem.date), "dd-MM-yyyy")}</ItemAnim>
+          <ItemAnim>
+            {lastItem.healthCareDistrict && lastItem.healthCareDistrict}:{" "}
+          </ItemAnim>
+          <ItemAnim>
+            {lastItem.date && format(new Date(lastItem.date), "dd-MM-yyyy")}
+          </ItemAnim>
         </InfectionItemStyled>
       </SmallTextColor>
     </LastInfectionStyled>

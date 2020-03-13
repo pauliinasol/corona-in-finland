@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { HeadingOne, HeadingTwo } from "../utils/typography";
+import { HeadingOne, HeadingTwo, SmallText } from "../utils/typography";
 import { filterCountries } from "../utils/lib";
 import { uniq } from "ramda";
 import { CountryCard } from "./Countries";
@@ -20,7 +20,9 @@ const DataNumber = styled.span`
   margin-right: 8px;
 `;
 
-const MainCard = styled.div``;
+const MainCard = styled.div`
+  padding: 50px;
+`;
 
 export const HealthData = () => {
   const [data, setData] = useState();
@@ -68,6 +70,7 @@ export const HealthData = () => {
       </DataCard>
       <CountryCard countries={countries} countryOptions={countryOptions} />
       <HeadingTwo>Keep calm, wash your hands and flatten the curve!</HeadingTwo>
+      <SmallText>Copyright (c) 2020 Helsingin Sanomat</SmallText>
     </MainCard>
   );
 };

@@ -50,11 +50,10 @@ export const CountryCard = ({ countries, countryOptions }) => {
     <>
       <ul>
         <HeadingTwo>Infection source country:</HeadingTwo>
-
         <CountryStyled>
           {countryOptions.map(c => (
-            <li>
-              <LineStyled key={countryOptions.id}>
+            <li key={countryOptions.id + c}>
+              <LineStyled>
                 <CountryCode>{getCountryCode(c)}</CountryCode>
                 <Line fromY={countriesLength(c)} />
                 <CountriesLengthStyled>
