@@ -43,7 +43,9 @@ export const HealthData = () => {
     }
 
     fetchData();
-  });
+  }, []);
+
+  console.log(data);
 
   if (!data && data === undefined) {
     return null;
@@ -53,7 +55,6 @@ export const HealthData = () => {
   const locations = filterLocations(data);
   const countryOptions = uniq(countries);
   const infectionLocation = uniq(locations);
-  console.log(countries, countryOptions);
   const lastItem = data.confirmed.slice(-1)[0];
   return (
     <MainCard>
