@@ -88,8 +88,8 @@ export const HealthData = () => {
         <LastInfection lastItem={lastItem} />
       </DataCard>
 
-      <CountryCard countriesGrouped={countriesGrouped} />
       <Location districtsGrouped={districtsGrouped} />
+      <CountryCard countriesGrouped={countriesGrouped} />
       <HeadingTwo>Keep calm, wash your hands and flatten the curve!</HeadingTwo>
       <SmallText>Data source: copyright (c) 2020 Helsingin Sanomat</SmallText>
       <SmallText>Find me from github: @pauliinasol</SmallText>
