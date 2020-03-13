@@ -6,6 +6,7 @@ import { uniq } from "ramda";
 import { CountryCard } from "./Countries";
 import { LastInfection } from "./LastInfection";
 import { Location } from "./Location";
+import { groupBy, toPairs, sortBy, map, prop, pipe, reverse } from "ramda";
 
 const DataCard = styled.div`
   padding: 10px;
@@ -45,17 +46,33 @@ export const HealthData = () => {
     fetchData();
   }, []);
 
-  console.log(data);
-
   if (!data && data === undefined) {
     return null;
   }
 
-  const countries = filterCountries(data);
-  const locations = filterLocations(data);
-  const countryOptions = uniq(countries);
-  const infectionLocation = uniq(locations);
+  const getSortedTotalCasesByProp = (propName, ...args) =>
+    pipe(
+      groupBy(prop(propName)),
+      toPairs,
+      map(([name, cases]) => [name, cases.length]),
+      sortBy(prop(1)),
+      reverse
+    )(...args);
+
+  const countriesGrouped = getSortedTotalCasesByProp(
+    "infectionSourceCountry",
+    data.confirmed
+  );
+
+  const districtsGrouped = getSortedTotalCasesByProp(
+    "healthCareDistrict",
+    data.confirmed
+  );
+
+  console.log(countriesGrouped);
+
   const lastItem = data.confirmed.slice(-1)[0];
+
   return (
     <MainCard>
       <HeadingOne>State of corona virus in Finland</HeadingOne>
@@ -75,8 +92,8 @@ export const HealthData = () => {
         <LastInfection lastItem={lastItem} />
       </DataCard>
 
-      <CountryCard countries={countries} countryOptions={countryOptions} />
-      <Location infectionLocation={infectionLocation} locations={locations} />
+      <CountryCard countriesGrouped={countriesGrouped} />
+      <Location districtsGrouped={districtsGrouped} />
       <HeadingTwo>Keep calm, wash your hands and flatten the curve!</HeadingTwo>
       <SmallText>Data source: copyright (c) 2020 Helsingin Sanomat</SmallText>
       <SmallText>Find me from github: @pauliinasol</SmallText>

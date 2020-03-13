@@ -53,24 +53,20 @@ const Line = styled.div`
   }
 `;
 
-export const CountryCard = ({ countries, countryOptions }) => {
-  const countriesLength = c =>
-    countries.filter(country => country === c).length;
+export const CountryCard = ({ countriesGrouped }) => {
+  const getCountryCode = c => (c == "null" ? "unknown" : c);
 
-  const getCountryCode = c => (c === null ? "unknown" : c);
   return (
     <>
       <ul>
         <HeadingTwo>Infection source country:</HeadingTwo>
         <CountryStyled>
-          {countryOptions.map(c => (
-            <li key={countryOptions.id + c}>
+          {countriesGrouped.map(c => (
+            <li key={countriesGrouped.id + c}>
               <LineStyled>
-                <CountryCode>{getCountryCode(c)}</CountryCode>
-                <Line fromY={countriesLength(c)} />
-                <CountriesLengthStyled>
-                  {countriesLength(c)}
-                </CountriesLengthStyled>
+                <CountryCode>{getCountryCode(c[0])}</CountryCode>
+                <Line fromY={c[1]} />
+                <CountriesLengthStyled>{c[1]}</CountriesLengthStyled>
               </LineStyled>
             </li>
           ))}

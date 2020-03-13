@@ -54,24 +54,18 @@ const Line = styled.div`
   }
 `;
 
-export const Location = ({ locations, infectionLocation }) => {
-  const locationsLength = l =>
-    locations.filter(location => location === l).length;
-
-  const getCountryCode = l => (l === null ? "unknown" : l);
+export const Location = ({ districtsGrouped }) => {
   return (
     <>
       <ul>
         <HeadingTwo>Infection location in Finland:</HeadingTwo>
         <CountryStyled>
-          {infectionLocation.map(l => (
-            <li key={infectionLocation.id + l}>
+          {districtsGrouped.map(d => (
+            <li key={districtsGrouped.id + d}>
               <LineStyled>
-                <LocationName>{getCountryCode(l)}</LocationName>
-                <Line fromY={locationsLength(l)} />
-                <LocationsLengthStyled>
-                  {locationsLength(l)}
-                </LocationsLengthStyled>
+                <LocationName>{d[0]}</LocationName>
+                <Line fromY={d[1]} />
+                <LocationsLengthStyled>{d[1]}</LocationsLengthStyled>
               </LineStyled>
             </li>
           ))}
