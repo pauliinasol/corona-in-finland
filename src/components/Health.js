@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { HeadingOne, HeadingTwo, SmallText } from "../utils/typography";
-import { filterCountries } from "../utils/lib";
+import { filterCountries, filterLocations } from "../utils/lib";
 import { uniq } from "ramda";
 import { CountryCard } from "./Countries";
 import { LastInfection } from "./LastInfection";
+import { Location } from "./Location";
 
 const DataCard = styled.div`
   padding: 10px;
@@ -20,8 +21,6 @@ const DataCard = styled.div`
 const DataNumber = styled.span`
   color: #5bc8ac;
   font-weight: bold;
-  /* margin-left: 8px;
-  margin-right: 8px; */
 `;
 
 const MainCard = styled.div`
@@ -51,7 +50,10 @@ export const HealthData = () => {
   }
 
   const countries = filterCountries(data);
+  const locations = filterLocations(data);
   const countryOptions = uniq(countries);
+  const infectionLocation = uniq(locations);
+  console.log(infectionLocation);
   const lastItem = data.confirmed.slice(-1)[0];
   return (
     <MainCard>
@@ -71,7 +73,9 @@ export const HealthData = () => {
       <DataCard center>
         <LastInfection lastItem={lastItem} />
       </DataCard>
+
       <CountryCard countries={countries} countryOptions={countryOptions} />
+      <Location infectionLocation={infectionLocation} locations={locations} />
       <HeadingTwo>Keep calm, wash your hands and flatten the curve!</HeadingTwo>
       <SmallText>Data source: copyright (c) 2020 Helsingin Sanomat</SmallText>
       <SmallText>Find me from github: @pauliinasol</SmallText>
