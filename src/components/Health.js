@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { HeadingOne, HeadingTwo, SmallText } from "../utils/typography";
-import { filterCountries, filterLocations } from "../utils/lib";
-import { uniq } from "ramda";
 import { CountryCard } from "./Countries";
 import { LastInfection } from "./LastInfection";
 import { Location } from "./Location";
@@ -68,8 +66,6 @@ export const HealthData = () => {
     "healthCareDistrict",
     data.confirmed
   );
-
-  console.log(countriesGrouped);
 
   const lastItem = data.confirmed.slice(-1)[0];
 
