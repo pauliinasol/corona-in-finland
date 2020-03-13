@@ -54,7 +54,7 @@ const Line = styled.div`
 `;
 
 export const CountryCard = ({ countriesGrouped }) => {
-  const getCountryCode = c => (c == "null" ? "unknown" : c);
+  const getCountryCode = c => (c === "null" ? "unknown" : c);
 
   return (
     <>
