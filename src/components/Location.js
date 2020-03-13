@@ -8,7 +8,7 @@ const CountryStyled = styled.div`
 `;
 
 const LocationName = styled.div`
-  width: 250px;
+  width: 220px;
   font-size: 20px;
   @media (max-width: 768px) {
     width: 80px;
