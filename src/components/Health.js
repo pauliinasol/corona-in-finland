@@ -53,7 +53,7 @@ export const HealthData = () => {
   const locations = filterLocations(data);
   const countryOptions = uniq(countries);
   const infectionLocation = uniq(locations);
-  console.log(infectionLocation);
+  console.log(countries, countryOptions);
   const lastItem = data.confirmed.slice(-1)[0];
   return (
     <MainCard>
