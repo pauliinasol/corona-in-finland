@@ -25,10 +25,10 @@ const InfectionItemStyled = styled.div`
 
 const ItemAnim = styled.span`
   animation-name: animation;
-  animation-duration: 400ms; /* or: Xms */
+  animation-duration: 400ms;
   animation-iteration-count: 1;
-  animation-timing-function: ease-in; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
-  animation-fill-mode: forwards; /* or: backwards, both, none */
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
   @keyframes animation {
     0% {
       opacity: 0;
@@ -42,7 +42,7 @@ const ItemAnim = styled.span`
 export const LastInfection = ({ lastItem }) => {
   return (
     <LastInfectionStyled>
-      <SmallText>Last Infection:</SmallText>
+      <SmallText>Latest Infection:</SmallText>
       <SmallTextColor>
         <InfectionItemStyled>
           <ItemAnim>
