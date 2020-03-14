@@ -45,7 +45,7 @@ const Line = styled.div`
   ${({ fromY }) => css`
     animation-name: ${keyframes`
       0% { width: 0px }
-      100% { width: ${fromY * 3}px}
+      100% { width: ${fromY}px}
     `};
   `}
   @media (max-width: 768px) {
@@ -59,6 +59,7 @@ const Line = styled.div`
 `;
 
 export const Location = ({ districtsGrouped }) => {
+  const getPx = d => (d < 220 ? d : 220);
   return (
     <>
       <ul>
@@ -68,7 +69,7 @@ export const Location = ({ districtsGrouped }) => {
             <li key={districtsGrouped.id + d}>
               <LineStyled>
                 <LocationName>{d[0]}</LocationName>
-                <Line fromY={d[1]} />
+                <Line fromY={getPx(d[1])} />
                 <LocationsLengthStyled>{d[1]}</LocationsLengthStyled>
               </LineStyled>
             </li>

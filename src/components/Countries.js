@@ -45,7 +45,7 @@ const Line = styled.div`
   ${({ fromY }) => css`
     animation-name: ${keyframes`
       0% { width: 0px }
-      100% { width: ${fromY * 3}px}
+      100% { width: ${fromY}px}
     `};
   `}
   @media (max-width: 768px) {
@@ -60,7 +60,7 @@ const Line = styled.div`
 
 export const CountryCard = ({ countriesGrouped }) => {
   const getCountryCode = c => (c === "null" ? "unknown" : c);
-
+  const getPx = c => (c < 220 ? c : 220);
   return (
     <>
       <ul>
@@ -70,7 +70,7 @@ export const CountryCard = ({ countriesGrouped }) => {
             <li key={countriesGrouped.id + c}>
               <LineStyled>
                 <CountryCode>{getCountryCode(c[0])}</CountryCode>
-                <Line fromY={c[1]} />
+                <Line fromY={getPx(c[1])} />
                 <CountriesLengthStyled>{c[1]}</CountriesLengthStyled>
               </LineStyled>
             </li>
