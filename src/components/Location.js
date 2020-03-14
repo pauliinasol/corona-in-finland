@@ -45,7 +45,7 @@ const Line = styled.div`
   ${({ fromY }) => css`
     animation-name: ${keyframes`
       0% { width: 0px }
-      100% { width: ${fromY}px}
+      100% { width: ${fromY + 1}px}
     `};
   `}
   @media (max-width: 768px) {

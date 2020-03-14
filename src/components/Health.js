@@ -75,7 +75,7 @@ export const HealthData = () => {
 
   return (
     <MainCard>
-      <HeadingOne>State of corona virus in Finland</HeadingOne>
+      <HeadingOne>State of COVID-19 in Finland</HeadingOne>
       <DataCard>
         There have been <DataNumber> {data.confirmed.length} </DataNumber>{" "}
         corona cases in Finland
