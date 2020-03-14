@@ -12,6 +12,7 @@ const CountryCode = styled.div`
   font-size: 20px;
   @media (max-width: 768px) {
     width: 80px;
+    font-size: 14px;
   }
 `;
 
