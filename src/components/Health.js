@@ -28,6 +28,9 @@ const DataNumber = styled.span`
 
 const MainCard = styled.div`
   padding: 50px;
+  a {
+    color: white;
+  }
 `;
 
 export const HealthData = () => {
@@ -99,7 +102,11 @@ export const HealthData = () => {
           Keep calm, wash your hands and flatten the curve
         </HeadingTwo>
         <SmallText>Data source: © 2020 Helsingin Sanomat</SmallText>
-        <SmallText>Find me from github: @pauliinasol</SmallText>
+        <SmallText>
+          <a href="https://github.com/pauliinasol/corona-in-finland/">
+            Project in Github
+          </a>
+        </SmallText>
       </ContentWrapper>
     </MainCard>
   );
