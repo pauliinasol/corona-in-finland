@@ -1,3 +1,7 @@
+## State of COVID-19 in Finland -app
+
+This app tracks the situation of corona virus in Finland. It provides information about the amounts of infections, deaths and recoveries and also tells where the infections have arisen and which country are they tracked to.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
