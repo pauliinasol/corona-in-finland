@@ -10,6 +10,8 @@ const CountryStyled = styled.div`
 const LocationName = styled.div`
   width: 220px;
   font-size: 20px;
+  display: flex;
+  align-self: center;
   @media (max-width: 768px) {
     width: 80px;
     font-size: 14px;
@@ -34,6 +36,8 @@ const LineStyled = styled.div`
 const Line = styled.div`
   background-color: #eb8a44;
   height: 10px;
+  display: flex;
+  align-self: center;
   animation-iteration-count: 1;
   animation-duration: 800ms;
   animation-timing-function: ease-in;

@@ -10,6 +10,8 @@ const CountryStyled = styled.div`
 const CountryCode = styled.div`
   width: 220px;
   font-size: 20px;
+  display: flex;
+  align-self: center;
   @media (max-width: 768px) {
     width: 80px;
     font-size: 14px;
@@ -33,6 +35,8 @@ const LineStyled = styled.div`
 
 const Line = styled.div`
   background-color: #eb8a44;
+  display: flex;
+  align-self: center;
   height: 10px;
   animation-iteration-count: 1;
   animation-duration: 800ms;
