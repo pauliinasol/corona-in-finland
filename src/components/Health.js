@@ -96,9 +96,9 @@ export const HealthData = () => {
       <CountryCard countriesGrouped={countriesGrouped} />
       <ContentWrapper>
         <HeadingTwo>
-          Keep calm, wash your hands and flatten the curve!
+          Keep calm, wash your hands and flatten the curve
         </HeadingTwo>
-        <SmallText>Data source: copyright (c) 2020 Helsingin Sanomat</SmallText>
+        <SmallText>Data source: © 2020 Helsingin Sanomat</SmallText>
         <SmallText>Find me from github: @pauliinasol</SmallText>
       </ContentWrapper>
     </MainCard>
