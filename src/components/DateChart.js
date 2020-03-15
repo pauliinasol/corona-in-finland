@@ -16,6 +16,11 @@ import {
 } from "react-vis";
 import { reverse } from "ramda";
 
+const GraphStyled = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export const DateChart = ({ dateGrouped }) => {
   const obj = dateGrouped.map(value => ({
     x: value[0],
@@ -24,18 +29,29 @@ export const DateChart = ({ dateGrouped }) => {
   console.log(dateGrouped);
 
   return (
-    <div>
+    <>
       <HeadingTwo>Amount of infections per day:</HeadingTwo>
-      <XYPlot height={300} width={700} xType="ordinal">
-        <LineSeries data={reverse(obj)} />
-        <XAxis
-          tickFormat={function tickFormat(d) {
-            const date = new Date(d);
-            return format(new Date(date), "dd.MM");
-          }}
-        />
-        <YAxis />
-      </XYPlot>
-    </div>
+      <GraphStyled>
+        <XYPlot height={300} width={420} xType="ordinal">
+          <LineSeries
+            data={reverse(obj)}
+            style={{
+              stroke: "#eb8a44"
+            }}
+          />
+          <XAxis
+            tickFormat={function tickFormat(d) {
+              const date = new Date(d);
+              return format(new Date(date), "dd.MM");
+            }}
+          />
+          <YAxis />
+        </XYPlot>
+      </GraphStyled>
+      <SmallText>
+        On the vertical axis the amount of infections and on the horizontal the
+        date of the month
+      </SmallText>
+    </>
   );
 };

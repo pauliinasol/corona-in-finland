@@ -5,7 +5,18 @@ import { CountryCard } from "./Countries";
 import { LastInfection } from "./LastInfection";
 import { Location } from "./Location";
 import { DateChart } from "./DateChart";
-import { groupBy, toPairs, sortBy, map, prop, pipe, reverse } from "ramda";
+import {
+  groupBy,
+  toPairs,
+  sortBy,
+  map,
+  prop,
+  pipe,
+  reverse,
+  set,
+  lensProp
+} from "ramda";
+import { format } from "date-fns";
 
 const DataCard = styled.div`
   padding: 10px;
@@ -65,6 +76,15 @@ export const HealthData = () => {
       reverse
     )(...args);
 
+  const getSortedTotalCasesByPropDate = (propName, ...args) =>
+    pipe(
+      groupBy(e => e[propName].substring(0, 10)),
+      toPairs,
+      map(([name, cases]) => [name, cases.length]),
+      sortBy(prop(0)),
+      reverse
+    )(...args);
+
   const countriesGrouped = getSortedTotalCasesByPropReversed(
     "infectionSourceCountry",
     data.confirmed
@@ -75,10 +95,18 @@ export const HealthData = () => {
     data.confirmed
   );
 
-  const dateGrouped = getSortedTotalCasesByPropReversed(
+  const dateGroupedNew = getSortedTotalCasesByPropDate(
     "date",
     data.confirmed
-  ).filter(d => d[1] > 4);
+  ).splice(0, 10);
+
+  console.log(dateGroupedNew);
+
+  const dateGrouped = getSortedTotalCasesByPropDate(
+    "date",
+    data.confirmed
+  ).splice(0, 10);
+
   console.log(dateGrouped);
 
   const lastItem = data.confirmed.slice(-1)[0];
