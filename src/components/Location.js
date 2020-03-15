@@ -59,7 +59,7 @@ const Line = styled.div`
 `;
 
 export const Location = ({ districtsGrouped }) => {
-  const getPx = d => (d < 220 ? d : 220);
+  const getPx = d => (d < 300 ? d : 300);
   return (
     <>
       <ul>

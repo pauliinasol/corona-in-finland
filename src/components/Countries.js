@@ -60,7 +60,7 @@ const Line = styled.div`
 
 export const CountryCard = ({ countriesGrouped }) => {
   const getCountryCode = c => (c === "null" ? "unknown" : c);
-  const getPx = c => (c < 220 ? c : 220);
+  const getPx = c => (c < 300 ? c : 300);
   return (
     <>
       <ul>

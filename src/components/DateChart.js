@@ -30,9 +30,9 @@ export const DateChart = ({ dateGrouped }) => {
 
   return (
     <>
-      <HeadingTwo>Amount of infections per day:</HeadingTwo>
+      <HeadingTwo>Number of infections per day:</HeadingTwo>
       <GraphStyled>
-        <XYPlot height={300} width={420} xType="ordinal">
+        <XYPlot height={300} width={400} xType="ordinal">
           <LineSeries
             data={reverse(obj)}
             style={{
@@ -50,7 +50,7 @@ export const DateChart = ({ dateGrouped }) => {
       </GraphStyled>
       <SmallText>
         On the vertical axis the amount of infections and on the horizontal the
-        date of the month
+        date
       </SmallText>
     </>
   );
