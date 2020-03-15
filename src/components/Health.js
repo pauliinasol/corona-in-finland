@@ -137,6 +137,7 @@ export const HealthData = () => {
         <HeadingTwo>
           Keep calm, wash your hands and flatten the curve
         </HeadingTwo>
+        <SmallText>By: Pauliina Solanne / @pauliinasol</SmallText>
         <SmallText>Data source: © 2020 Helsingin Sanomat</SmallText>
         <SmallText>
           <a href="https://github.com/pauliinasol/corona-in-finland/">
