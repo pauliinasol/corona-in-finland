@@ -4,6 +4,7 @@ import { HeadingOne, HeadingTwo, SmallText } from "../utils/typography";
 import { CountryCard } from "./Countries";
 import { LastInfection } from "./LastInfection";
 import { Location } from "./Location";
+import { DateChart } from "./DateChart";
 import { groupBy, toPairs, sortBy, map, prop, pipe, reverse } from "ramda";
 
 const DataCard = styled.div`
@@ -55,7 +56,7 @@ export const HealthData = () => {
     return null;
   }
 
-  const getSortedTotalCasesByProp = (propName, ...args) =>
+  const getSortedTotalCasesByPropReversed = (propName, ...args) =>
     pipe(
       groupBy(prop(propName)),
       toPairs,
@@ -64,15 +65,21 @@ export const HealthData = () => {
       reverse
     )(...args);
 
-  const countriesGrouped = getSortedTotalCasesByProp(
+  const countriesGrouped = getSortedTotalCasesByPropReversed(
     "infectionSourceCountry",
     data.confirmed
   );
 
-  const districtsGrouped = getSortedTotalCasesByProp(
+  const districtsGrouped = getSortedTotalCasesByPropReversed(
     "healthCareDistrict",
     data.confirmed
   );
+
+  const dateGrouped = getSortedTotalCasesByPropReversed(
+    "date",
+    data.confirmed
+  ).filter(d => d[1] > 4);
+  console.log(dateGrouped);
 
   const lastItem = data.confirmed.slice(-1)[0];
 
@@ -97,6 +104,7 @@ export const HealthData = () => {
 
       <Location districtsGrouped={districtsGrouped} />
       <CountryCard countriesGrouped={countriesGrouped} />
+      <DateChart dateGrouped={dateGrouped} />
       <ContentWrapper>
         <HeadingTwo>
           Keep calm, wash your hands and flatten the curve

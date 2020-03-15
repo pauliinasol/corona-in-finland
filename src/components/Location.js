@@ -13,7 +13,7 @@ const LocationName = styled.div`
   display: flex;
   align-self: center;
   @media (max-width: 768px) {
-    width: 80px;
+    width: 100px;
     font-size: 14px;
   }
 `;
